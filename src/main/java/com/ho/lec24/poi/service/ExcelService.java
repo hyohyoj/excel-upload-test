@@ -33,7 +33,7 @@ public class ExcelService {
 		XSSFWorkbook workbook = null;
 
 		try {
-			// HSSFWorkbook은 엑셀파일 전체 내용을 담고 있는 객체
+			// XSSFWorkbook은 엑셀파일 전체 내용을 담고 있는 객체
 			workbook = new XSSFWorkbook(file.getInputStream());
 
 			// 탐색에 사용할 Sheet, Row, Cell 객체
@@ -70,19 +70,19 @@ public class ExcelService {
 
 										// cell 스타일이 다르더라도 String으로 반환 받음
 										switch (curCell.getCellType()) {
-										case HSSFCell.CELL_TYPE_FORMULA:
+										case XSSFCell.CELL_TYPE_FORMULA:
 											value = curCell.getCellFormula();
 											break;
-										case HSSFCell.CELL_TYPE_NUMERIC:
+										case XSSFCell.CELL_TYPE_NUMERIC:
 											value = curCell.getNumericCellValue() + "";
 											break;
-										case HSSFCell.CELL_TYPE_STRING:
+										case XSSFCell.CELL_TYPE_STRING:
 											value = curCell.getStringCellValue() + "";
 											break;
-										case HSSFCell.CELL_TYPE_BLANK:
+										case XSSFCell.CELL_TYPE_BLANK:
 											value = curCell.getBooleanCellValue() + "";
 											break;
-										case HSSFCell.CELL_TYPE_ERROR:
+										case XSSFCell.CELL_TYPE_ERROR:
 											value = curCell.getErrorCellValue() + "";
 											break;
 										default:

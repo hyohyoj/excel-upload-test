@@ -34,7 +34,6 @@ public class ExcelController {
 	public void excelUpload(MultipartHttpServletRequest request, ExcelData excelData) {
 		String excelType = request.getParameter("excelType");
 
-		System.out.println("ㅎㅎ");
 		// 엑셀 파일이 xls, xlsx일 때 서비스 라우팅
 		if (excelType.equals("xlsx")) {
 			excelService.xlsxExcelReader(request);
