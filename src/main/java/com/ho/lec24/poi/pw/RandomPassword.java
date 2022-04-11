@@ -1,7 +1,6 @@
 package com.ho.lec24.poi.pw;
 
 import java.security.SecureRandom;
-import java.util.Date;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +17,7 @@ public class RandomPassword {
 
 		StringBuffer sb = new StringBuffer();
 		SecureRandom sr = new SecureRandom();
-		sr.setSeed(new Date().getTime()); // 동일한 seed값이 생기지 않도록 함
+		// sr.setSeed(new Date().getTime()); // 동일한 seed값이 생기지 않도록 함
 
 		int index = 0;
 		int length = charSet.length;
